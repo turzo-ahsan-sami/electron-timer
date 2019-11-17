@@ -27,7 +27,7 @@ export class AppComponent {
   }
 
   /// finish timer
-  finish() {
+  end() {
     this.current = this.max;
   }
 

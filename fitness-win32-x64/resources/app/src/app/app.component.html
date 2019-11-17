@@ -19,13 +19,16 @@
 
   <div class="controls-wrapper">
 
-    <label>Seconds</label>
-    <input class="input" placeholder="number of seconds" type="text" [(ngModel)]="max" (keydown)="reset()">
+    <input class="form-control form-control-sm input" placeholder="number of seconds" type="text" [(ngModel)]="max" (keydown)="reset()">
 
+    <div class="btn-group">
+      <button class="btn btn-sm btn-success" *ngIf="currentVal <= 0" (click)="start()">Start</button>
+      <button class="btn btn-sm btn-danger" *ngIf="!isFinished" (click)="end()">End</button>
+      <button class="btn btn-sm btn-secondary" *ngIf="isFinished" (click)="reset()">Reset</button>
+    </div>
 
-    <button *ngIf="currentVal <= 0" (click)="start()">Start</button>
-    <button *ngIf="!isFinished" (click)="finish()">Finish</button>
-    <button *ngIf="isFinished" (click)="reset()">Reset</button>
+    
+
   </div>
 
 
